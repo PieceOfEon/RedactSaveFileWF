@@ -95,7 +95,6 @@ namespace RedactSaveFileWF
                 F2.directory=textBox2.Text;
 
                 directory = F2.directory;
-                
 
             }
             
@@ -103,8 +102,6 @@ namespace RedactSaveFileWF
 
         private async void button5_Click(object sender, EventArgs e)
         {
-
-            Form1 F2 = new Form1();
             name = textBox1.Text;
            
             MessageBox.Show(name);
@@ -119,6 +116,11 @@ namespace RedactSaveFileWF
                     }
             }
             catch (Exception E) { MessageBox.Show(E.Message); }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
