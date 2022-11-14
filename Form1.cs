@@ -41,7 +41,8 @@ namespace RedactSaveFileWF
             textBox1.Visible = true;
             textBox2.Visible = false;
             label1.Visible = false;
-
+            //directory = "";
+            //directory = textBox2.Text;
             try
             {
                 directory = textBox2.Text;
@@ -58,6 +59,7 @@ namespace RedactSaveFileWF
             
             button3.Visible = false;
             button4.Visible = false;
+            //directory = textBox2.Text;
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -94,11 +96,16 @@ namespace RedactSaveFileWF
 
                 directory = F2.directory;
             }
+
         }
 
         private async void button5_Click(object sender, EventArgs e)
         {
             name = textBox1.Text;
+           
+            MessageBox.Show(name);
+            
+            MessageBox.Show(directory);
             try
             {
                 if (File.Exists(directory))
