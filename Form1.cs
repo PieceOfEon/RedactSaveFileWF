@@ -9,7 +9,7 @@ namespace RedactSaveFileWF
 {
     public partial class Form1 : Form
     {
-        
+
         public string directory;
         public string name;
         
@@ -41,12 +41,13 @@ namespace RedactSaveFileWF
             textBox1.Visible = true;
             textBox2.Visible = false;
             label1.Visible = false;
-            directory = "";
-            directory = textBox2.Text;
+            //directory = "";
+            //directory = textBox2.Text;
             try
             {
-                if (File.Exists(directory))
-                    using (StreamReader F = new StreamReader(directory))
+                directory = textBox2.Text;
+                if (File.Exists(textBox2.Text))
+                    using (StreamReader F = new StreamReader(textBox2.Text))
                     {
                         textBox1.Text = F.ReadToEnd();
                     }
@@ -55,10 +56,10 @@ namespace RedactSaveFileWF
             button1.Visible = true;
             button2.Visible = true;
             textBox1.ReadOnly = true;
-
+            
             button3.Visible = false;
             button4.Visible = false;
-            
+            //directory = textBox2.Text;
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -91,8 +92,10 @@ namespace RedactSaveFileWF
                 F2.button6.Visible = true;
                 F2.button1.Visible = false;
                 F2.button2.Visible = false;
-                name = F2.textBox1.Text;
-                //name = F2.name;
+                F2.directory=textBox2.Text;
+
+                directory = F2.directory;
+                
 
             }
             
@@ -100,13 +103,12 @@ namespace RedactSaveFileWF
 
         private async void button5_Click(object sender, EventArgs e)
         {
+
+            Form1 F2 = new Form1();
+            name = textBox1.Text;
            
-            //Form1 F2 = new Form1();
-            
-            
-            //name = F2.textBox1.Text;
             MessageBox.Show(name);
-            //directory = F2.textBox2.Text;
+            
             MessageBox.Show(directory);
             try
             {
